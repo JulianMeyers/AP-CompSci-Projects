@@ -584,6 +584,10 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
             {
                 activeThread = new QuicksortThread(mainArray,statsThread,this);
             }
+            if (OperationCombo.getSelectedItem().equals("Heap Sort"))
+            {
+                activeThread = new HeapSortThread(mainArray,statsThread,this);
+            }
             if (OperationCombo.getSelectedItem().equals("*Linear Search"))
             {
             	    // for a search, request a value to search for, then create the thread.
@@ -595,10 +599,10 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
             if (OperationCombo.getSelectedItem().equals("*Binary Search (recursive)"))
             {
             	    // for a search, request a value to search for, then create the thread.
-//                double searchValue = requestSearchValue();
-//                if (-1 == searchValue)
-//                    return;
-//                activeThread = new BinarySearchRecursiveThread(mainArray,statsThread,this,searchValue);
+                double searchValue = requestSearchValue();
+                if (-1 == searchValue)
+                    return;
+                activeThread = new BinarySearchRecursiveThread(mainArray,statsThread,this,searchValue);
             }
             if (null!=activeThread)
             {
