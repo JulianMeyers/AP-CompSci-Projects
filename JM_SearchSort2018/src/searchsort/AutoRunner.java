@@ -93,16 +93,16 @@ public class AutoRunner implements ThreadCompletedDelegate
 			return new BubbleSortThread(mainArray,statsThread,this);
 		if (name.equals("BozoSort"))
 			return new BozoSortThread(mainArray,statsThread,this);
-//		if (name.equals("SelectionSort"))
-//			return new SelectionSortThread(mainArray,statsThread,this);
-//		if (name.equals("InsertionSort"))
-//			return new InsertionSortThread(mainArray,statsThread,this);
-//		if (name.equals("MergeSort"))
-//			return new MergeSortThread(mainArray,statsThread,this);
-//		if (name.equals("QuickSort"))
-//			return new QuickSortThread(mainArray,statsThread,this);
-//		if (name.equals("HeapSort"))
-//			return new HeapSortThread(mainArray,statsThread,this);
+		if (name.equals("SelectionSort"))
+			return new SelectionSortThread(mainArray,statsThread,this);
+		if (name.equals("InsertionSort"))
+			return new InsertionSortThread(mainArray,statsThread,this);
+		if (name.equals("MergeSort"))
+			return new MergeSortThread(mainArray,statsThread,this);
+		if (name.equals("QuickSort"))
+			return new QuicksortThread(mainArray,statsThread,this);
+		if (name.equals("HeapSort"))
+			return new HeapSortThread(mainArray,statsThread,this);
 		return null;
 	}
 
