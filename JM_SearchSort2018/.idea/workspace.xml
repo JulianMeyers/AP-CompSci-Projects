@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="afdbfb0e-fcbd-44e0-9d78-6d4bd161976c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/searchsort/MergeSortThread.java" afterPath="$PROJECT_DIR$/src/searchsort/MergeSortThread.java" />
+      <change beforePath="$PROJECT_DIR$/bin/searchsort/MergeSortThread.class" afterPath="$PROJECT_DIR$/bin/searchsort/MergeSortThread.class" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -333,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522253018080</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added indicators and switched to use subarray method">
+      <created>1522256457129</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1522256457129</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -404,7 +411,8 @@
     <MESSAGE value="Added heap sort and binary search" />
     <MESSAGE value="Added selection sort ga3 graph" />
     <MESSAGE value="Added indicators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added indicators" />
+    <MESSAGE value="Added indicators and switched to use subarray method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added indicators and switched to use subarray method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
