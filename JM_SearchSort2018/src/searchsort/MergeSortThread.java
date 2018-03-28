@@ -21,18 +21,18 @@ public class MergeSortThread extends AbstractSearchSortThread {
         int n2 = r - m;
 
         /* Create temp arrays */
-        BarArray L = new BarArray(n1);
-        BarArray R = new BarArray(n2);
+//        BarArray L = new BarArray(n1);
+//        BarArray R = new BarArray(n2);
+//
+//        /*Copy data to temp arrays*/
+//
+//        for (int i=0; i<n1; ++i)
+//            L.set(i,arr.get(l+i));
+//        for (int j=0; j<n2; ++j)
+//            R.set(j, arr.get(m + 1 + j));
 
-        /*Copy data to temp arrays*/
-
-        for (int i=0; i<n1; ++i)
-            L.set(i,arr.get(l+i));
-        for (int j=0; j<n2; ++j)
-            R.set(j, arr.get(m + 1 + j));
-
-//        L = arr.subarray(m);
-//        R = arr.subarray(m+1, r);
+        BarArray L = arr.subarray(l,l+n1);
+        BarArray R = arr.subarray(m+1,m+n2+1);
 
         /* Merge the temp arrays */
 
@@ -81,6 +81,7 @@ public class MergeSortThread extends AbstractSearchSortThread {
             checkIn();
             // Find the middle point
             int m = (l + r) / 2;
+            ActionIndicatorQueue.sharedActionIndicatorQueue().addVariable("m", m);
 
             // Sort first and second halves
             sort(arr, l, m);
