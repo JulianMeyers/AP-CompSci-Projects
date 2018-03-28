@@ -17,6 +17,7 @@ public class SelectionSortThread extends AbstractSearchSortThread {
         /*   (could do j < n-1 because single element is also min element) */
         for (j = 0; j < numBars-1; j++)
         {
+            ActionIndicatorQueue.sharedActionIndicatorQueue().addVariable("j", j);
             System.out.println("I got here 1");
             /* find the min element in the unsorted a[j .. n-1] */
 
@@ -25,6 +26,7 @@ public class SelectionSortThread extends AbstractSearchSortThread {
             /* test against elements after j to find the smallest */
             for (i = j+1; i < numBars; i++)
             {
+                ActionIndicatorQueue.sharedActionIndicatorQueue().addVariable("i", i);
                 System.out.println("I got here");
                 /* if this element is less, then it is the new minimum */
                 if (mainArray.get(i).compareTo(mainArray.get(iMin)) < 0) {
