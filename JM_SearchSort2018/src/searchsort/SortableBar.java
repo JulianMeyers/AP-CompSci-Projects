@@ -203,6 +203,56 @@ public class SortableBar implements Comparable, Constants{
 		temp = temp/3;
 		return (double)(temp);
     }
+
+    public double getValue()
+
+    {
+
+    		int inversionFactor=1;
+
+        if (Invert_Order)
+
+                inversionFactor=-1;
+
+    		switch (Current_Comparison_Type)
+
+    		{
+
+    		case BAR_COMPARE_BY_SIZE:
+
+            return inversionFactor*this.getSize();
+
+        case BAR_COMPARE_BY_RED:
+
+        		return inversionFactor*this.getRed();
+
+        case BAR_COMPARE_BY_GREEN:
+
+        		return inversionFactor*this.getGreen();
+
+        case BAR_COMPARE_BY_BLUE:
+
+        		return inversionFactor*this.getBlue();
+
+        case BAR_COMPARE_BY_BRIGHTNESS:
+
+        		return inversionFactor*this.getBrightness();
+
+        case BAR_COMPARE_BY_TOP:
+
+        		return inversionFactor*this.getTop();
+
+        case BAR_COMPARE_BY_BOTTOM:
+
+        		return inversionFactor*this.getBottom();
+
+        default:
+
+        		return 0;
+
+    		}
+
+    }
     
     // No need for modifiers 
     

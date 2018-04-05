@@ -151,7 +151,7 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
         jLabel2.setText("Operation:");
         jPanel1.add(jLabel2);
 
-        OperationCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "*Linear Search", "*Binary Search (iterative)", "*Binary Search (recursive)", "-", "Randomize", "Bubble Sort", "Bozo Sort", "*Selection Sort", "*Insertion Sort", "*Merge Sort", "Quick Sort", "Shell Sort", "Heap Sort" }));
+        OperationCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "*Linear Search", "*Binary Search (iterative)", "*Binary Search (recursive)", "-", "Randomize", "Bubble Sort", "Bozo Sort", "*Selection Sort", "*Insertion Sort", "*Merge Sort", "Quick Sort", "Shell Sort", "Heap Sort", "Radix Sort" }));
         OperationCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OperationComboActionPerformed(evt);
@@ -550,30 +550,30 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
     }//GEN-LAST:event_AutoResetCheckBoxActionPerformed
 
     // THIS METHOD IS ONE YOU WILL HAVE TO UPDATE!
-    // This is how you activate the various search or sort threads, so that they 
+    // This is how you activate the various search or search threads, so that they
     // actually get called when the user hits "start."
     private void startButtonPressed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonPressed
         if (startButton.getText().equals("Start"))
         {
             activeThread = null;
             if (OperationCombo.getSelectedItem().equals("Bubble Sort"))
-            {   // for a sort, just create the thread with these parameters.
+            {   // for a search, just create the thread with these parameters.
                 activeThread = new BubbleSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("Bozo Sort"))
-            {   // for a sort, just create the thread with these parameters.
+            {   // for a search, just create the thread with these parameters.
                 activeThread = new BozoSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("*Selection Sort"))
-            {   // for a sort, just create the thread with these parameters.
+            {   // for a search, just create the thread with these parameters.
                 activeThread = new SelectionSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("*Insertion Sort"))
-            {   // for a sort, just create the thread with these parameters.
+            {   // for a search, just create the thread with these parameters.
                 activeThread = new InsertionSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("Shell Sort"))
-            {   // for a sort, just create the thread with these parameters.
+            {   // for a search, just create the thread with these parameters.
                 activeThread = new ShellSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("*Merge Sort"))
@@ -587,6 +587,10 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
             if (OperationCombo.getSelectedItem().equals("Heap Sort"))
             {
                 activeThread = new HeapSortThread(mainArray,statsThread,this);
+            }
+            if (OperationCombo.getSelectedItem().equals("Radix Sort"))
+            {
+                activeThread = new RadixSortThread(mainArray,statsThread,this);
             }
             if (OperationCombo.getSelectedItem().equals("*Linear Search"))
             {
@@ -792,7 +796,7 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
     }
 
     /**
-     * updates the buttons and status field when the search/sort algorithm is
+     * updates the buttons and status field when the search/search algorithm is
      * finished.
      * @param whichThread
      * @param status
@@ -826,7 +830,7 @@ public class SearchSortFrame extends javax.swing.JFrame implements ThreadComplet
     }
 
     /**
-     * updates the GUI - buttons and status field when a search/sort algorithm
+     * updates the GUI - buttons and status field when a search/search algorithm
      * begins
      */
     private void updateGUIForStart()

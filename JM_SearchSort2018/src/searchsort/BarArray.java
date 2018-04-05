@@ -354,7 +354,7 @@ public class BarArray implements Constants
             //      not influence set/get counts. This has the effect of slowing
             //      the display thread slightly, but should reduce the amount
             //      of time this drawing algorithm locks the list, so as to have
-            //      less effect on the search/sort algorithms' timing.
+            //      less effect on the search/search algorithms' timing.
             System.arraycopy(this.theBars, 0, barCopy.theBars, 0, len);
         locked = false;
 
@@ -404,7 +404,7 @@ public class BarArray implements Constants
      * duplicates in all of top, bottom, red, green, and blue, (not just the current
      * comparison type).
      * This is statistically very unlikely in a random list, but often happens
-     * by accident with improperly written sort algorithms.
+     * by accident with improperly written search algorithms.
      * @return whether there are adjacent duplicate bars in the list.
      */
     public synchronized boolean hasDuplicates()

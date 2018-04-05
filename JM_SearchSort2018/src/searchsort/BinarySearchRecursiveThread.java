@@ -13,10 +13,10 @@ public class BinarySearchRecursiveThread extends AbstractSearchThread{
         int n = mainArray.size();
         int l = 0;
         int r = n-1;
-        return sort(l,r);
+        return search(l,r);
     }
 
-    public int sort(int l, int r){
+    public int search(int l, int r){
         if (l > r) {
             announceMissedBar();
             return STATUS_FINISHED_FAILED;
@@ -25,9 +25,9 @@ public class BinarySearchRecursiveThread extends AbstractSearchThread{
         ActionIndicatorQueue.sharedActionIndicatorQueue().addVariable("l", l);
         ActionIndicatorQueue.sharedActionIndicatorQueue().addVariable("m", m);
         if (mainArray.get(m).compareTo(searchTarget) < 0) {
-            return sort(m + 1,r);
+            return search(m + 1,r);
         }else if (mainArray.get(m).compareTo(searchTarget) > 0) {
-            return sort(l, m-1);
+            return search(l, m-1);
         } else {
             announceFoundBar(mainArray.get(m),m);
             return STATUS_FINISHED_FOUND;

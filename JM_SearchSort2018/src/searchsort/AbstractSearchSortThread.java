@@ -14,7 +14,7 @@ package searchsort;
  * It does not need to do anything else.
  * <p>
  * The second method you must write is executeAlgorithm(). This is the workhorse of your
- * program. It's job is to sort the BarArray, "mainArray," which is a class variable 
+ * program. It's job is to search the BarArray, "mainArray," which is a class variable
  * that has already been populated (in the constructor). There are two things you must
  * do to make the program work properly, and one suggested thing to do:
  * <ul><li>at the end of the executeAlgorithm() method, you MUST return STATUS_FINISHED;</li>
@@ -136,7 +136,7 @@ public abstract class AbstractSearchSortThread extends Thread implements Constan
     }
 
     /**
-     * the function to override that does the actual search or sort.
+     * the function to override that does the actual search or search.
      * @return the status code for the result of this search.
      * @throws InterruptedException
      */

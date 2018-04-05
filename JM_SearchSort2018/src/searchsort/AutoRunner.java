@@ -48,7 +48,7 @@ public class AutoRunner implements ThreadCompletedDelegate
 				System.out.println("could not parse \""+p+".\"");
 			}
 		System.out.println("Enter the names of the sorts you wish to test as a comma delimited list, or type space to skip.");
-		System.out.println("Legal sorts: BubbleSort, BozoSort, SelectionSort, InsertionSort, MergeSort, QuickSort, HeapSort.");
+		System.out.println("Legal sorts: BubbleSort, BozoSort, SelectionSort, InsertionSort, MergeSort, QuickSort, HeapSort, RadixSort.");
 		String sortList = keyboardInput.nextLine().replaceAll("\\s",""); // a snazzy trick which replaces all spaces "\s" with "".
 		sortNames.addAll(Arrays.asList(sortList.split(",")));
 		
@@ -59,7 +59,7 @@ public class AutoRunner implements ThreadCompletedDelegate
 			{ 
 				if (sortThreadByName(name) == null)
 				{
-					System.out.println("Could not find a sort for \""+name+".\"");
+					System.out.println("Could not find a search for \""+name+".\"");
 					continue;
 				}
 				for(int n:NValues)
@@ -103,6 +103,8 @@ public class AutoRunner implements ThreadCompletedDelegate
 			return new QuicksortThread(mainArray,statsThread,this);
 		if (name.equals("HeapSort"))
 			return new HeapSortThread(mainArray,statsThread,this);
+		if (name.equals("RadixSort"))
+			return new RadixSortThread(mainArray,statsThread,this);
 		return null;
 	}
 

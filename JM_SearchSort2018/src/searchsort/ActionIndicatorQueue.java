@@ -22,7 +22,7 @@ import java.util.HashMap;
  * addSetArrow() or addSwapArrow() with the index (or indices) where you want the arrow to
  * appear. (In the SearchSort program, this is automatically called by the BarArray.) These 
  * arrows will gradually fade as other arrows appear on screen.
- * <p>When writing a search or sort algorithm, it is often helpful to label the bars
+ * <p>When writing a search or search algorithm, it is often helpful to label the bars
  * with a given variable name - for instance, when "i" is 42 in your loop, it can be
  * useful to display the letter "i" under bar #42. This can be done via the addVariable()
  * method, which takes a String (the letter "i," for instance) and an int (42, for instance).
@@ -177,8 +177,8 @@ public class ActionIndicatorQueue implements Constants {
      */
     public boolean addSwapArrow(int i, int j)
     {
-        if (Math.min(i,j)==Math.max(i, j))
-            System.out.println("Recording non-swap event...");
+//        if (Math.min(i,j)==Math.max(i, j))
+//            System.out.println("Recording non-swap event...");
         HashMap<String,Integer> temp = new HashMap<String, Integer>();
         temp.put(TYPE_KEY,ACTION_SWAP_TYPE);
         temp.put(LOCATION_KEY, Math.min(i,j));
